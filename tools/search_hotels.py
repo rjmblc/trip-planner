@@ -2,20 +2,33 @@ import requests
 import os
 from search_place import search_place
 from dotenv import load_dotenv
+from crewai.tools import tool
 
 
 # load .env to environment
 load_dotenv()
 api_key = os.getenv("X-Goog-Api-Key")
 GOOGLE_HOTELS_BASE_URL = os.getenv("GOOGLE_HOTELS_BASE_URL")
-place_details = search_place('BLR')
+# place_details = search_place('BLR')
 
-latitude = place_details[0]["latitude"]
-longitude = place_details[0]["longitude"]
+# latitude = place_details[0]["latitude"]
+# longitude = place_details[0]["longitude"]
 
-def hotels_search(latitude: float, longitude: float) -> dict:
+@tool("Hotel details")
+def hotels_search(arr_iata: float) -> dict:
     """
+    This function returns the list of hotel names around the latitude and langitude coordinates provided
+    
+    Parameters:
+    latitude (float), longitude (float): The latitude and longitude values of the airport iata code
+
+    Returns:
+    A list of hotel names
     """
+    place_details = search_place(arr_iata)
+
+    latitude = place_details[0]["latitude"]
+    longitude = place_details[0]["longitude"]
     headers = {
         'Content-Type': 'application/json',
         'X-Goog-Api-Key': api_key,
