@@ -1,0 +1,6 @@
+access_key = 3e07715fc096cda5bb2a089e406e05c9
+SEARCH_FLIGHTS_BASE_URL = https://api.aviationstack.com/v1/flights
+GOOGLE_PLACES_BASE_URL = https://places.googleapis.com/v1/places:searchText
+GOOGLE_HOTELS_BASE_URL = https://places.googleapis.com/v1/places:searchNearby
+X-Goog-Api-Key = google_places_api_key
+GROQ_API_KEY = groq_api_key
