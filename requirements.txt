@@ -1,0 +1,5 @@
+pydantic-ai-slim[groq]
+requests
+crewai
+crewai-tools
+python-dotenv
