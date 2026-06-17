@@ -3,3 +3,4 @@ requests
 crewai
 crewai-tools
 python-dotenv
+crewai[litellm]
