@@ -4,10 +4,10 @@ from crew import stock_crew
 
 load_dotenv()
 
-def run(arr_iata: str, dep_iata: str):
-    result = stock_crew.kickoff(inputs={"arr_iata": arr_iata, "dep_iata": dep_iata})
+def run(dep_iata: str,arr_iata: str):
+    result = stock_crew.kickoff(inputs={"dep_iata": dep_iata,"arr_iata": arr_iata})
     print(result)
 
 
 if __name__ == "__main__":
-    run("BLR", "MAA")
+    run("BLR","AMS")
