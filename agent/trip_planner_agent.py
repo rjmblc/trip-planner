@@ -1,7 +1,15 @@
 from crewai import Agent, LLM
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+MODEL_NAME = os.getenv("MODEL_NAME")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 llm = LLM(
-    model="groq/llama-3.3-70b-versatile",
+    model=MODEL_NAME,
+    api_key=GEMINI_API_KEY,
     temperature=0
 )
 
